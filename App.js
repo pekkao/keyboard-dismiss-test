@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { StyleSheet, Text, View, TextInput, Keyboard, SafeAreaView } from 'react-native';
+import { StyleSheet, View, TextInput, Keyboard } from 'react-native';
 
 export default function App() {
 
