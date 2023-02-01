@@ -1,11 +1,30 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { StyleSheet, Text, View, TextInput, Keyboard, SafeAreaView } from 'react-native';
 
 export default function App() {
+
+  const [text, onChangeText] = useState('');
+  const [number, onChangeNumber] = useState('');
+
+  useEffect(() => {
+    Keyboard.dismiss();
+  }, [text, number]);
+
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <TextInput
+        style={styles.input}
+        onChangeText={onChangeText}
+        placeholder="character here"
+        value={text}
+      />
+      <TextInput
+        style={styles.input}
+        onChangeText={onChangeNumber}
+        value={number}
+        placeholder="number here"
+        keyboardType="numeric"
+      />
     </View>
   );
 }
